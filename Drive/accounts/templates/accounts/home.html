@@ -1,0 +1,51 @@
+
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+{% for message in messages %}
+          <script>alert('{{message}}')</script>
+        {% endfor %}
+<section class="billboard">
+    <div class="billboard-container">
+        <div class="billboard-text">
+            <br>
+            <h1>LEARN DRIVING</h1>
+            <p>BOOK ONLINE TODAY HURRY UP!</p> 
+            <a class="billboard-button" href="/booking">BookNow</a>
+        </div>
+
+        <div class="billboard-image">
+            <img src="{% static 'images/c.jpg' %}" height="200" width="500">
+
+        </div>
+        <div class="clear">
+
+    </div>
+    </section>
+
+<section class="boxes-container">
+
+    <div class="box1">
+        <img src="{% static 'images/car.jpg' %}" width="300" alt="image1">
+    
+      <p>Car  </p>Package:Zero Level	<p>Days:20 days</p>	<p>Duration:1 hour</p>	 <p>price:NRs. 32000</p>	 
+   </div>
+
+   <div class="box2 box2-center">
+    <img src="{% static 'images/f.jpeg' %}" width="300" alt="image1">
+  <p>Scooter </p>Package:Zero Level	<p>Days:9 days</p>	<p>Duration:1 hour</p>	 <p>price:NRs. 4500</p>
+</div>
+
+<div class="box3 box3-float-right">
+    <img src="{% static 'images/bike.jpeg' %}" width="245" alt="image1">
+
+  <p>Motorcycle  </p>Package:Zero Level	<p>Days:9 days</p>	<p>Duration:1 hour</p>	 <p>price:NRs. 7000</p>
+</div>
+
+
+
+    <div class="clear"></div>
+</section>
+
+{% endblock content %}

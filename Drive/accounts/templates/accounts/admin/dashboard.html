@@ -1,0 +1,45 @@
+{%  extends 'accounts/admin/main.html' %}
+
+{% block content %}
+
+
+	<div class="col-md-7">
+		<h5> Bookings</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="/create_order"">Create Bookings</a>
+			<table class="table table-sm">
+				<tr>
+					<th>User</th>
+					<th>Lesson</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Phone</th>
+
+					
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+				{% for booking in booking %}
+					<tr>
+						<td>{{booking.user}}</td>
+						<td>{{booking.Product}}</td>
+						<td>{{booking.date}}</td>
+						<td>{{booking.time}}</td>
+						<td>{{booking.phone}}</td>
+						<td><a class="btn btn-sm btn-info" href="/update_order/{{booking.id}}">Update</a></td>
+						<td><a class="btn btn-sm btn-danger" href="/delete_order/{{booking.id}}">Delete</a></td>
+
+					</tr>
+				{% endfor %}
+
+		
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
+

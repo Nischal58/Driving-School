@@ -1,0 +1,114 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving School</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 40%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+
+    <header>
+        <div class="header-container">
+        <a href="/" class="logo">
+            <h1> Driving<span class="school">School</span>
+        </h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/contact">CONTACT US</a></li>
+                <li>Hello {{user.username}} </a></li>
+                <li><a href="/logout">logout </a></li>
+                
+            </ul>
+        </nav>
+    </div>
+        <div class="clear"></div>
+
+    </header>
+<center>
+<br>
+<br>
+<form action="/submit" method="POST">
+    {% csrf_token %}
+<br>    
+<h1>Name:
+       <input type="text" name="name" id="" class="form-control form-control-lg">
+</h1>
+<br>
+<h1>Phone number:
+    <input type="text" name="phone" id="" class="form-control form-control-lg">
+    
+</h1>
+<br>
+    <label for="cars"><h1>Lessons :</label>
+    <select id ="cars" name="vehicle">
+        <option value="Car">Car</option>
+        <option value="Motorcycle">Motorcycle</option>
+        <option value="Scooter">Scooter</option>
+    </h1>
+  </select>
+    <br>
+<h1>Date:<input type="date" name="date1" class="form-control form-control-lg">
+    <br>
+    <label for="time">time:</label>
+    <select name ="time1">
+        <option value="6'o clock - 7'clock">6'o clock - 7'clock </option>
+        <option value="7'o clock - 8'clock ">7'o clock - 8'clock</option>
+        <option value="8'o clock - 9'clock ">8'o clock - 9'clock</option>
+        <option value="9'o clock - 10'clock ">9'o clock - 10'clock</option>
+        <option value="10'o clock - 11'clock ">10'o clock - 11'clock</option>
+        <option value="11'o clock - 12'clock ">11'o clock - 12'clock </option>
+        <option value="12'o clock - 1'clock ">12'o clock - 1'clock</option>
+        <option value="1'o clock - 2'clock ">1'o clock - 2'clock </option>
+        <option value="2'o clock - 3'clock ">2'o clock - 3'clock</option>
+        <option value="3'o clock - 4'clock ">3'o clock - 4'clock</option>
+        <option value="4'o clock - 5'clock ">4'o clock - 5'clock </option>
+    </select>
+</h1>
+    <br>
+    <input type="submit" name="" id="">
+</form>
+
+
+     
+  
+    
+    

@@ -1,0 +1,39 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+        <a href="/" class="logo">
+            <h1> Driving<span class="school">School</span>
+        </h1>
+        </a>
+        <nav>
+            <ul>
+               
+                <li><a href="/">HOME</a></li>
+                <li><a href="/contact">CONTACT US</a></li>
+                
+                <li>{% if user.is_authenticated %}
+                    <p>Welcome, {{ user.username }}.</li>
+                <li><a href="/logout">logout </a></li>       
+                    {% else %}
+                    <li><a href="/login">Login </a></li>
+                 {% endif %}
+              
+                
+            </ul>
+        </nav>
+    </div>
+        <div class="clear"></div>
+
+    </header>
